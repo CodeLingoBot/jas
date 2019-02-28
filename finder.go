@@ -284,7 +284,7 @@ func (finder Finder) FindBool(paths ...interface{}) (bool, error) {
 	return false, WrongTypeError
 }
 
-// return the length of []interface or map[string]interface{}
+// Len returns the length of []interface or map[string]interface{}
 // return -1 if the value not found or has wrong type.
 func (finder Finder) Len(paths ...interface{}) int {
 	finder = finder.FindChild(paths...)

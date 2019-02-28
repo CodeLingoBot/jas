@@ -39,7 +39,7 @@ type Context struct {
 
 var NoJsonBody = errors.New("jas.Context: no json body")
 
-//Write and flush the data.
+//FlushData writes and flush the data.
 //It can be used for http streaming or to write a portion of large amount of data.
 //If the type of the data is not []byte, it will be marshaled to json format.
 func (ctx *Context) FlushData(data interface{}) (written int, err error) {
@@ -74,7 +74,7 @@ func (ctx *Context) FlushData(data interface{}) (written int, err error) {
 	return
 }
 
-//Add response header Set-Cookie.
+//SetCookie adds response header Set-Cookie.
 func (ctx *Context) SetCookie(cookie *http.Cookie) {
 	ctx.ResponseHeader.Add("Set-Cookie", cookie.String())
 }

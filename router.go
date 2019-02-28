@@ -142,7 +142,7 @@ func (router *Router) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-//Get the paths that have been handled by resources.
+//HandledPaths gets the paths that have been handled by resources.
 //The paths are sorted, it can be used to detect api path changes.
 func (r *Router) HandledPaths(withBasePath bool) string {
 	var handledPaths []string
